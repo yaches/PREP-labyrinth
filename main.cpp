@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "Field.hpp"
 
 
@@ -15,11 +16,18 @@ int main(int argc, char* argv[])
     ifstream file;
     file.exceptions(ifstream::failbit | ifstream::badbit);
 
+    std::stringstream hack_stream1;
+    std::stringstream hack_stream2;
+
+    hack_stream1 << "3 3" << std::endl << "1 1 1" << std::endl << "1 2 1" << std::endl << "1 1 1" << std::endl;
+    hack_stream2 << "3 3" << std::endl << "1 1 1" << std::endl << "1 3 1" << std::endl << "1 1 1" << std::endl;
+
     try {
         Field field;
 
         file.open(argv[1]);
-        file >> field;
+        hack_stream1 >> field;
+        hack_stream2 >> field;
 
         while (!field.is_done()) {
             field.tic();
