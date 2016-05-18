@@ -30,8 +30,6 @@ class Runner: public RunnerBase {
             bool wall;
         };
 
-        Direction prev_step;
-
         int map_size = 1;
         int min_crd = 0;
         int max_crd = 0;
