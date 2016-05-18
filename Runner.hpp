@@ -9,7 +9,7 @@
 
 class Runner: public RunnerBase {
     public:
-        Direction step() {  };
+        Direction step();
 };
 
 

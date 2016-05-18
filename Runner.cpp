@@ -4,3 +4,4 @@
 
 #include "Runner.hpp"
 
+Direction Runner::step() {};
