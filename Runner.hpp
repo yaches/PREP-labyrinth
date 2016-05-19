@@ -34,7 +34,7 @@ class Runner: public RunnerBase {
         int min_crd = 0;
         int max_crd = 0;
         Point** map = NULL;
-        Point position {0, 0, 1, 1, 0, 0, 0};
+        Point position {0, 0, 1, 0, 0, 0, 0};
 };
 
 
