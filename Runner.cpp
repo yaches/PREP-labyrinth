@@ -132,11 +132,18 @@ void Runner::photo()
 	if (walls < 2)
 	{
 		position.crossway = 1;
+		position.was_here_again = 0;
+	}
+
+	if (position.crossway)
+	{
+		position.was_here_again = 0;
 	}
 
 	if (walls == 3)
 	{
 		position.was_here_again = 1;
+		position.wall = 1;
 	}
 
 	map[y_ind][x_ind] = position;
