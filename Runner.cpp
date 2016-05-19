@@ -8,18 +8,22 @@ Direction Runner::step()
 {
 	if (current_status.up == BlockType::EXIT)
 	{
+		freeMap();
 		return Direction::UP;
 	}
 	else if (current_status.down == BlockType::EXIT)
 	{
+		freeMap();
 		return Direction::DOWN;
 	}
 	else if (current_status.left == BlockType::EXIT)
 	{
+		freeMap();
 		return Direction::LEFT;
 	}
 	else if (current_status.right == BlockType::EXIT)
 	{
+		freeMap();
 		return Direction::RIGHT;
 	}
 
@@ -54,22 +58,22 @@ Direction Runner::step()
 		return Direction::UP;
 	}
 
-	if (!right_point.wall and !right_point.was_here_again)
+	if (!right_point.wall)
 	{
 		position = map[y_ind][x_ind + 1];
 		return Direction::RIGHT;
 	}
-	if (!down_point.wall and !down_point.was_here_again)
+	if (!down_point.wall)
 	{
 		position = map[y_ind - 1][x_ind];
 		return Direction::DOWN;
 	}
-	if (!left_point.wall and !left_point.was_here_again)
+	if (!left_point.wall)
 	{
 		position = map[y_ind][x_ind - 1];
 		return Direction::LEFT;
 	}
-	if (!up_point.wall and !up_point.was_here_again)
+	if (!up_point.wall)
 	{
 		position = map[y_ind + 1][x_ind];
 		return Direction::UP;
@@ -132,7 +136,6 @@ void Runner::photo()
 	if (walls < 2)
 	{
 		position.crossway = 1;
-		position.was_here_again = 0;
 	}
 
 	if (position.crossway)
@@ -179,7 +182,7 @@ void Runner::resize_map()
 	{
 		delete[] map[i];
 	}
-	delete map;
+	delete[] map;
 
 	map = new_map;
 	min_crd = new_min;
@@ -200,4 +203,13 @@ void Runner::draw()
 		cout << endl;
 	}
 	cout << endl;
+}
+
+void Runner::freeMap()
+{
+	for (int i = 0; i < map_size; ++i)
+	{
+		delete[] map[i];
+	}
+	delete[] map;
 }

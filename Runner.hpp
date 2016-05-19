@@ -18,6 +18,7 @@ class Runner: public RunnerBase {
         void photo();
         void resize_map();
         void draw();
+        void freeMap();
 
         struct Point
         {
