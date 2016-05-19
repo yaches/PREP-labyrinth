@@ -8,22 +8,18 @@ Direction Runner::step()
 {
 	if (current_status.up == BlockType::EXIT)
 	{
-		cout << "UP 0" << endl;
 		return Direction::UP;
 	}
 	else if (current_status.down == BlockType::EXIT)
 	{
-		cout << "DOWN 0" << endl;
 		return Direction::DOWN;
 	}
 	else if (current_status.left == BlockType::EXIT)
 	{
-		cout << "LEFT 0" << endl;
 		return Direction::LEFT;
 	}
 	else if (current_status.right == BlockType::EXIT)
 	{
-		cout << "RIGHT 0" << endl;
 		return Direction::RIGHT;
 	}
 
@@ -40,50 +36,42 @@ Direction Runner::step()
 	if (!right_point.wall and !right_point.was_here)
 	{
 		position = map[y_ind][x_ind + 1];
-		cout << "RIGHT 1" << endl;
 		return Direction::RIGHT;
 	}
 	if (!down_point.wall and !down_point.was_here)
 	{
 		position = map[y_ind - 1][x_ind];
-		cout << "DOWN 1" << endl;
 		return Direction::DOWN;
 	}
 	if (!left_point.wall and !left_point.was_here)
 	{
 		position = map[y_ind][x_ind - 1];
-		cout << "LEFT 1" << endl;
 		return Direction::LEFT;
 	}
 	if (!up_point.wall and !up_point.was_here)
 	{
 		position = map[y_ind + 1][x_ind];
-		cout << "UP 1" << endl;
 		return Direction::UP;
 	}
 
 	if (!right_point.wall and !right_point.was_here_again)
 	{
 		position = map[y_ind][x_ind + 1];
-		cout << "RIGHT 2" << endl;
 		return Direction::RIGHT;
 	}
 	if (!down_point.wall and !down_point.was_here_again)
 	{
 		position = map[y_ind - 1][x_ind];
-		cout << "DOWN 2" << endl;
 		return Direction::DOWN;
 	}
 	if (!left_point.wall and !left_point.was_here_again)
 	{
 		position = map[y_ind][x_ind - 1];
-		cout << "LEFT 2" << endl;
 		return Direction::LEFT;
 	}
 	if (!up_point.wall and !up_point.was_here_again)
 	{
 		position = map[y_ind + 1][x_ind];
-		cout << "UP 2" << endl;
 		return Direction::UP;
 	}
 
