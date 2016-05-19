@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <map>
 
 #include "RunnerBase.hpp"
 
@@ -19,6 +20,8 @@ class Runner: public RunnerBase {
         void resize_map();
         void draw();
         void freeMap();
+        void setPriority();
+        Direction clockwise(Direction, bool);
 
         struct Point
         {
@@ -31,11 +34,22 @@ class Runner: public RunnerBase {
             bool wall;
         };
 
+        Direction prev_step;
+
+        int up_cnt = 0;
+        int dn_cnt = 0;
+        int lf_cnt = 0;
+        int rt_cnt = 0;
+
+        map<Direction, int> cnt = { {Direction::UP, 0}, {Direction::RIGHT, 0}, 
+        {Direction::DOWN, 0}, {Direction::LEFT, 0} };
+
         int map_size = 1;
         int min_crd = 0;
         int max_crd = 0;
-        Point** map = NULL;
+        Point** lab_map = NULL;
         Point position {0, 0, 1, 0, 0, 0, 0};
+        Direction priority[4] = {Direction::DOWN, Direction::RIGHT, Direction::UP, Direction::LEFT};
 };
 
 
