@@ -27,10 +27,10 @@ Direction Runner::step()
 		return Direction::RIGHT;
 	}
 
-	// if (map_size > 1)
-	// {
-	// 	setPriority();
-	// }
+	if (map_size > 1)
+	{
+		setPriority();
+	}
 
 	photo();
 
@@ -272,16 +272,16 @@ void Runner::setPriority()
 	// 	priority[i] = clockwise(priority[i - 1], 1);
 	// }
 
-	map<Direction, int>::iterator it;
-	int i = 0;
-	pair<Direction, int> cnt_array[4];
+	// map<Direction, int>::iterator it;
+	// int i = 0;
+	// pair<Direction, int> cnt_array[4];
 
-	for (it = cnt.begin(); it != cnt.end(); ++it)
-	{
-		cnt_array[i++] = *it;
-	}
+	// for (it = cnt.begin(); it != cnt.end(); ++it)
+	// {
+	// 	cnt_array[i++] = *it;
+	// }
 
-	pair<Direction, int> tmp;
+	// pair<Direction, int> tmp;
 
 	// for (i = 0; i < 4; ++i)
 	// {
@@ -296,10 +296,15 @@ void Runner::setPriority()
 	// 	}
 	// }
 
-	for (i = 0; i < 4; ++i)
-	{
-		priority[i] = cnt_array[i].first;
-	}
+	// for (i = 0; i < 4; ++i)
+	// {
+	// 	priority[i] = cnt_array[i].first;
+	// }
+
+	priority[0] = prev_step;
+	priority[1] = clockwise(prev_step, 1);
+	priority[2] = clockwise(prev_step, 0);
+	priority[3] = clockwise(clockwise(prev_step, 0), 0);
 }
 
 Direction Runner::clockwise(Direction step, bool way)
