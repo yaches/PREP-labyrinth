@@ -49,13 +49,13 @@ class Runner: public RunnerBase {
         int max_crd = 0;
         Point** lab_map = NULL;
         Point position {0, 0, 1, 0, 0, 0, 0};
-        Direction priority[4] = {Direction::LEFT, Direction::DOWN, Direction::UP, Direction::RIGHT};
+        Direction priority[4] = {Direction::LEFT, Direction::RIGHT, Direction::DOWN, Direction::UP};
         bool go = 0;
 };
 
 // URDL URLD UDLR UDRL ULDR ULRD
 // +RDLU RDUL RLUD RLDU RUDL RULD
-// +LURD +LUDR +LDRU +LDUR LRDU LRUD
+// +LURD +LUDR +LDRU +LDUR +LRDU LRUD
 // +DRUL +DRLU +DULR +DURL +DLUR +DLRU
 
 #endif //LABYRINTH_RUNNER_HPP
