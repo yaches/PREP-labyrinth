@@ -49,7 +49,7 @@ class Runner: public RunnerBase {
         int max_crd = 0;
         Point** lab_map = NULL;
         Point position {0, 0, 1, 0, 0, 0, 0};
-        Direction priority[4] = {Direction::RIGHT, Direction::DOWN, Direction::LEFT, Direction::UP};
+        Direction priority[4] = {Direction::DOWN, Direction::RIGHT, Direction::LEFT, Direction::UP};
         bool go = 0;
 };
 

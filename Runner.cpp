@@ -36,7 +36,7 @@ Direction Runner::step()
 
 	if (map_size > 1)
 	{
-		setPriority();
+		// setPriority();
 	}
 
 	Direction next_step;
