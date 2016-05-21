@@ -10,41 +10,26 @@ Direction Runner::step()
 
 	if (current_status.up == BlockType::EXIT)
 	{
-		cout << " UP " << cnt[Direction::UP];
-		cout << " RIGHT " << cnt[Direction::RIGHT];
-		cout << " LEFT " << cnt[Direction::LEFT];
-		cout << " DOWN " << cnt[Direction::DOWN] << endl;
+	// 	cout << " UP " << cnt[Direction::UP];
+	// 	cout << " RIGHT " << cnt[Direction::RIGHT];
+	// 	cout << " LEFT " << cnt[Direction::LEFT];
+	// 	cout << " DOWN " << cnt[Direction::DOWN] << endl;
 
 		freeMap();
 		return Direction::UP;
 	}
 	else if (current_status.down == BlockType::EXIT)
 	{
-		cout << " UP " << cnt[Direction::UP];
-		cout << " RIGHT " << cnt[Direction::RIGHT];
-		cout << " LEFT " << cnt[Direction::LEFT];
-		cout << " DOWN " << cnt[Direction::DOWN] << endl;
-
 		freeMap();
 		return Direction::DOWN;
 	}
 	else if (current_status.left == BlockType::EXIT)
 	{
-		cout << " UP " << cnt[Direction::UP];
-		cout << " RIGHT " << cnt[Direction::RIGHT];
-		cout << " LEFT " << cnt[Direction::LEFT];
-		cout << " DOWN " << cnt[Direction::DOWN] << endl;
-
 		freeMap();
 		return Direction::LEFT;
 	}
 	else if (current_status.right == BlockType::EXIT)
 	{
-		cout << " UP " << cnt[Direction::UP];
-		cout << " RIGHT " << cnt[Direction::RIGHT];
-		cout << " LEFT " << cnt[Direction::LEFT];
-		cout << " DOWN " << cnt[Direction::DOWN] << endl;
-
 		freeMap();
 		return Direction::RIGHT;
 	}
