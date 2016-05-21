@@ -265,7 +265,7 @@ void Runner::setPriority()
 
 	for (i = 0; i < 4; ++i)
 	{
-		priority[i] = cnt_array[i].first;
+		priority[i] = cnt_array[3-i].first;
 	}
 
 	// priority[0] = prev_step;
