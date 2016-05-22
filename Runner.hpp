@@ -39,6 +39,9 @@ class Runner: public RunnerBase {
         void printStep(Direction);
         void savePosition(Point);
 
+        void RUN_FOREST(int);
+        void RUN_FASTER(int, int, int, int);
+
         Direction prev_step;
 
         map<Direction, int> cnt = { {Direction::UP, 0}, {Direction::RIGHT, 0}, 
@@ -56,8 +59,8 @@ class Runner: public RunnerBase {
         bool go = 0;
 };
 
-// RLDU 190
-// RDUL 198
-// RDLU 206
+// RLDU 190 = 1
+// RDUL 198 = 2
+// RDLU 206 = 3
 
 #endif //LABYRINTH_RUNNER_HPP
